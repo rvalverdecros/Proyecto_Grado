@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Zombie Buster!</string>
+
+    <!--Actividad MainActivity-->
+    <string name="btnLogin">LOGIN</string>
+    <string name="btnRegistro">REGISTRARSE</string>
+
+    <!--Actividad Registro-->
+    <string name="correoEt">Correo Electronico</string>
+    <string name="passEt">Contraseña</string>
+    <string name="nombreEt">Nombre</string>
+    <string name="fechatxt">Fecha</string>
+    <string name="registrar">REGISTRAR</string>
+
+</resources>

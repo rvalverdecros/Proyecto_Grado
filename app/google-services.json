@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "878694108239",
+    "project_id": "zombie-buster-dc5f7",
+    "storage_bucket": "zombie-buster-dc5f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878694108239:android:eb2fad5cf50aef00d02e3a",
+        "android_client_info": {
+          "package_name": "com.example.proyectogrado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878694108239-25ouelp81lb63g3lsk3cjjdhaqf1frga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyectogrado",
+            "certificate_hash": "a961add4d2469b4c8c7ed29bdb9a515f01c30156"
+          }
+        },
+        {
+          "client_id": "878694108239-7ouf8gig1rlc4lh2seobpu0123k27rhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4F6w5xnabs15_fW2Ydlxqr7mnuEGN9AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878694108239-7ouf8gig1rlc4lh2seobpu0123k27rhq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
