@@ -12,4 +12,11 @@
     <string name="fechatxt">Fecha</string>
     <string name="registrar">REGISTRAR</string>
 
+    <!--Actividad Login-->
+    <string name="correoLogin">Correo Electronico</string>
+    <string name="passLogin">Contraseña</string>
+    <string name="botonLogin">Ingresar</string>
+
+    <!--Actividad Menu-->
+    <string name="cerrarSesion">Cerrar Sesion</string>
 </resources>

@@ -21,7 +21,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 //Codigo que se ejecuta
-                Intent intent = new Intent(Splash.this, MainActivity.class);
+                Intent intent = new Intent(Splash.this, Menu.class);
                 startActivity(intent);
             };
         }, duracion_Splash);

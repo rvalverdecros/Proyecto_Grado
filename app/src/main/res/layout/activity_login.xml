@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context=".Registro">
+    tools:context=".Login">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -18,61 +19,38 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <EditText
-                android:id="@+id/correoEt"
-                android:hint="@string/correoEt"
+                android:id="@+id/correoLogin"
+                android:hint="@string/correoLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:importantForAutofill="no" />
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <!--Contraseña-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
             <EditText
-                android:id="@+id/passEt"
-                android:hint="@string/passEt"
+                android:id="@+id/passLogin"
+                android:hint="@string/passLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:importantForAutofill="no"/>
+                android:importantForAutofill="no" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Nombre del Usuario-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/nombreEt"
-                android:hint="@string/nombreEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:importantForAutofill="no"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!--Fecha Actual-->
-        <TextView
-            android:id="@+id/fechatxt"
-            android:text="@string/fechatxt"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <!--Registrar Jugador-->
+        <!--Boton de Login-->
         <Button
-            android:id="@+id/registrar"
-            android:text="@string/registrar"
-            android:layout_marginTop="10dp"
+            android:id="@+id/botonLogin"
+            android:text="@string/botonLogin"
             android:background="#086A87"
             android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
