@@ -18,5 +18,16 @@
     <string name="botonLogin">Ingresar</string>
 
     <!--Actividad Menu-->
-    <string name="cerrarSesion">Cerrar Sesion</string>
+    <string name="mipuntuaciontxt">Mi Puntuacion</string>
+    <string name="zombies"> -- </string>
+    <string name="uid"> -- </string>
+    <string name="correo"> -- </string>
+    <string name="nombre"> -- </string>
+
+    <string name="menutxt">Menu</string>
+
+    <string name="jugarbtn">Jugar</string>
+    <string name="puntuacionesbtn">Puntuaciones</string>
+    <string name="acercadebtn">Acerca de</string>
+    <string name="cerrarSesionbtn">Cerrar Sesion</string>
 </resources>
