@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -26,6 +27,9 @@ public class Login extends AppCompatActivity {
 
     FirebaseAuth auth; //La Autenticacion de Firebase
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,12 @@ public class Login extends AppCompatActivity {
         passLogin = findViewById(R.id.passLogin);
         botonLogin = findViewById(R.id.botonLogin);
         auth = FirebaseAuth.getInstance();
+
+        //UBICACION
+        String ubicacion ="fuentes/zombie.TTF";
+        Typeface tf = Typeface.createFromAsset(Login.this.getAssets(),ubicacion);
+
+        botonLogin.setTypeface(tf);
 
         //Al hacer Click en el boton de Login
         botonLogin.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +77,7 @@ public class Login extends AppCompatActivity {
                             FirebaseUser user = auth.getCurrentUser();
                             startActivity(new Intent(Login.this, Menu.class));
                             assert user != null; //El usuario no es nulo
-                            Toast.makeText(Login.this, "BIENVENIDO/A"+user.getEmail(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "BIENVENIDO/A "+user.getEmail(), Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }

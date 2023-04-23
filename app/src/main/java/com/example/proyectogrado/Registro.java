@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -35,6 +36,8 @@ public class Registro extends AppCompatActivity {
     Button registrar;
     FirebaseAuth auth; //La Autenticacion de Firebase
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,12 @@ public class Registro extends AppCompatActivity {
         nombreEt = findViewById(R.id.nombreEt);
         fechatxt = findViewById(R.id.fechatxt);
         registrar = findViewById(R.id.registrar);
+
+        //UBICACION
+        String ubicacion ="fuentes/zombie.TTF";
+        Typeface tf = Typeface.createFromAsset(Registro.this.getAssets(),ubicacion);
+
+        registrar.setTypeface(tf);
 
         auth = FirebaseAuth.getInstance();
 

@@ -71,7 +71,7 @@
             android:id="@+id/registrar"
             android:text="@string/registrar"
             android:layout_marginTop="10dp"
-            android:background="#086A87"
+            android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

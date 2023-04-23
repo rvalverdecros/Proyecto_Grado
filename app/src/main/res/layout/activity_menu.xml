@@ -75,37 +75,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!--JUGAR-->
         <Button
             android:id="@+id/jugarbtn"
             android:text="@string/jugarbtn"
             android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!--PUNTUACIONES-->
         <Button
             android:id="@+id/puntuacionesbtn"
             android:text="@string/puntuacionesbtn"
             android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
+            android:textSize="20sp"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!--ACERCA DE-->
         <Button
             android:id="@+id/acercadebtn"
             android:text="@string/acercadebtn"
             android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
+            android:textSize="20sp"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!--CERRAR SESION-->
         <Button
             android:id="@+id/cerrarSesionbtn"
             android:text="@string/cerrarSesionbtn"
             android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
+            android:textSize="20sp"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

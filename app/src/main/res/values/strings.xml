@@ -23,6 +23,7 @@
     <string name="uid"> -- </string>
     <string name="correo"> -- </string>
     <string name="nombre"> -- </string>
+    <string name="fecha"> -- </string>
 
     <string name="menutxt">Menu</string>
 
@@ -30,4 +31,10 @@
     <string name="puntuacionesbtn">Puntuaciones</string>
     <string name="acercadebtn">Acerca de</string>
     <string name="cerrarSesionbtn">Cerrar Sesion</string>
+
+    <!--Escenario-->
+    <string name="tvContador"> 0 </string>
+    <string name="tvNombre"> ---- </string>
+    <string name="tvTiempo"> 0S </string>
+
 </resources>

@@ -48,7 +48,7 @@
         <Button
             android:id="@+id/botonLogin"
             android:text="@string/botonLogin"
-            android:background="#086A87"
+            android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
