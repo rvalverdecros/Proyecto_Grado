@@ -37,4 +37,16 @@
     <string name="tvNombre"> ---- </string>
     <string name="tvTiempo"> 0S </string>
 
+    <!--Pantalla-->
+    <string name="anchoTv"> -- </string>
+    <string name="altoTv"> -- </string>
+
+    <!--GameOver-->
+    <string name="seAcaboTXT">¡Se acabo el tiempo!</string>
+    <string name="hasMatadoTXT">Has matado</string>
+    <string name="numeroTXT"> -- </string>
+    <string name="jugarDeNuevo">JUGAR DE NUEVO</string>
+    <string name="irMenu">MENU</string>
+    <string name="puntuacion">VER PUNTUACION</string>
+
 </resources>
