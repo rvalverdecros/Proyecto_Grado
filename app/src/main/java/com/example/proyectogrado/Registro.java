@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity {
 
-    EditText correoEt,passEt,nombreEt;
+    EditText correoEt,passEt,nombreEt, edadEt, paisEt;
     TextView fechatxt;
     Button registrar;
     FirebaseAuth auth; //La Autenticacion de Firebase
@@ -49,6 +49,8 @@ public class Registro extends AppCompatActivity {
         correoEt = findViewById(R.id.correoEt);
         passEt = findViewById(R.id.passEt);
         nombreEt = findViewById(R.id.nombreEt);
+        edadEt = findViewById(R.id.edadEt);
+        paisEt = findViewById(R.id.paisEt);
         fechatxt = findViewById(R.id.fechatxt);
         registrar = findViewById(R.id.registrar);
 
@@ -101,6 +103,8 @@ public class Registro extends AppCompatActivity {
                     String correoString = correoEt.getText().toString();
                     String passString = passEt.getText().toString();
                     String nombreString = nombreEt.getText().toString();
+                    String edadString = edadEt.getText().toString();
+                    String paisString = paisEt.getText().toString();
                     String fechaString = fechatxt.toString();
 
                     HashMap<Object,Object> datosJugador = new HashMap<>();
@@ -109,6 +113,9 @@ public class Registro extends AppCompatActivity {
                     datosJugador.put("Correo", correoString);
                     datosJugador.put("Contraseña", passString);
                     datosJugador.put("Nombre", nombreString);
+                    datosJugador.put("Edad", edadString);
+                    datosJugador.put("Pais", paisString);
+                    datosJugador.put("Imagen", "");
                     datosJugador.put("Fecha", fechaString);
                     datosJugador.put("Zombies", contador);
 

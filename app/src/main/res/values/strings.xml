@@ -10,6 +10,8 @@
     <string name="passEt">Contraseña</string>
     <string name="nombreEt">Nombre</string>
     <string name="fechatxt">Fecha</string>
+    <string name="edadEt">Edad</string>
+    <string name="paisEt">Pais</string>
     <string name="registrar">REGISTRAR</string>
 
     <!--Actividad Login-->
@@ -18,16 +20,21 @@
     <string name="botonLogin">Ingresar</string>
 
     <!--Actividad Menu-->
+    <string name="miperfiltxt">Mi Perfil</string>
     <string name="mipuntuaciontxt">Mi Puntuacion</string>
     <string name="zombies"> -- </string>
     <string name="uid"> -- </string>
     <string name="correo"> -- </string>
     <string name="nombre"> -- </string>
+    <string name="edad"> -- </string>
+    <string name="pais"> -- </string>
     <string name="fecha"> -- </string>
 
     <string name="menutxt">Menu</string>
 
     <string name="jugarbtn">Jugar</string>
+    <string name="editarbtn">Editar</string>
+    <string name="cambiarPassbtn">Cambiar Contraseña</string>
     <string name="puntuacionesbtn">Puntuaciones</string>
     <string name="acercadebtn">Acerca de</string>
     <string name="cerrarSesionbtn">Cerrar Sesion</string>

@@ -1,8 +1,10 @@
 package com.example.proyectogrado;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -15,6 +17,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 import java.util.Random;
 
 public class EscenarioJuego extends AppCompatActivity {
@@ -35,6 +45,11 @@ public class EscenarioJuego extends AppCompatActivity {
     Dialog miDialog;
     int contador = 0;
 
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference jugadores;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +63,13 @@ public class EscenarioJuego extends AppCompatActivity {
 
 
         miDialog = new Dialog(EscenarioJuego.this);
-        Bundle intent = getIntent().getExtras();
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://zombie-buster-dc5f7-default-rtdb.europe-west1.firebasedatabase.app");
+        jugadores = firebaseDatabase.getReference("MI BASE DE DATOS JUGADORES");
+
+        Bundle intent = getIntent().getExtras();
         uidS = intent.getString("UID");
         nombreS = intent.getString("NOMBRE");
         zombieS = intent.getString("ZOMBIES");
@@ -138,6 +158,7 @@ public class EscenarioJuego extends AppCompatActivity {
                 tvTiempo.setText("0S");
                 gameOver = true;
                 MensajeGameOver();
+                GuardarResultados("Zombies",contador);
             }
         }.start();
     }
@@ -174,14 +195,19 @@ public class EscenarioJuego extends AppCompatActivity {
         jugarDeNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EscenarioJuego.this, "JUGAR DE NUEVO", Toast.LENGTH_SHORT).show();
+                contador = 0;
+                miDialog.dismiss();
+                tvContador.setText("0");
+                gameOver = false;
+                CuentaAtras();
+                Movimiento();
             }
         });
 
         irMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EscenarioJuego.this, "MENU", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(EscenarioJuego.this, Menu.class));
             }
         });
 
@@ -192,5 +218,18 @@ public class EscenarioJuego extends AppCompatActivity {
             }
         });
         miDialog.show();
+    }
+
+    private void GuardarResultados(String key, int zombies){
+
+        HashMap<String,Object> hashMap = new HashMap<>();
+        hashMap.put(key,zombies);
+        jugadores.child(user.getUid()).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(EscenarioJuego.this, "La puntuacion ha sido actualizada", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

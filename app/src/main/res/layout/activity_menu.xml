@@ -14,56 +14,125 @@
         android:padding="10dp"
         android:gravity="center">
 
+        <!--PERFIL DEL USUARIO-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/miperfiltxt"
+                android:text="@string/miperfiltxt"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imagenPerfil"
+                android:src="@drawable/soldado"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"/>
+
+            <!--UID-->
+            <TextView
+                android:id="@+id/uid"
+                android:text="@string/uid"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--CORREO-->
+            <TextView
+                android:id="@+id/correo"
+                android:text="@string/correo"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--NOMBRE DE USUARIO-->
+            <TextView
+                android:id="@+id/nombre"
+                android:text="@string/nombre"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--EDAD DE USUARIO-->
+            <TextView
+                android:id="@+id/edad"
+                android:text="@string/edad"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--PAIS DE USUARIO-->
+            <TextView
+                android:id="@+id/pais"
+                android:text="@string/pais"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
         <!--TXT-->
         <TextView
             android:id="@+id/mipuntuaciontxt"
             android:text="@string/mipuntuaciontxt"
             android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#0489B1"
+            android:textStyle="bold"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <!--ZOMBIES-->
-        <TextView
-            android:id="@+id/zombies"
-            android:text="@string/zombies"
-            android:gravity="center"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <!--IMAGEN-->
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imagen"
-            android:src="@drawable/zombie"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-
-        <!--UID-->
-        <TextView
-            android:id="@+id/uid"
-            android:text="@string/uid"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:orientation="horizontal">
 
-        <!--CORREO-->
-        <TextView
-            android:id="@+id/correo"
-            android:text="@string/correo"
-            android:gravity="center"
+            <!--ZOMBIES-->
+            <TextView
+                android:id="@+id/zombies"
+                android:text="@string/zombies"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#04B45F"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!--IMAGEN-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imagen"
+                android:src="@drawable/zombie"
+                android:layout_marginStart="20dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:background="#000000"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <!--NOMBRE DE USUARIO-->
-        <TextView
-            android:id="@+id/nombre"
-            android:text="@string/nombre"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="3dp"/>
 
         <!--TXT-->
         <TextView
@@ -79,6 +148,28 @@
         <Button
             android:id="@+id/jugarbtn"
             android:text="@string/jugarbtn"
+            android:background="@drawable/boton_personalizado"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--EDITAR-->
+        <Button
+            android:id="@+id/editarbtn"
+            android:text="@string/editarbtn"
+            android:background="@drawable/boton_personalizado"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--CAMBIAR LA CONTRASEÑA-->
+        <Button
+            android:id="@+id/cambiarPassbtn"
+            android:text="@string/cambiarPassbtn"
             android:background="@drawable/boton_personalizado"
             android:textColor="#ffffff"
             android:textSize="20sp"
