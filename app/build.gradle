@@ -53,4 +53,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828' /*GESTIONAR IMAGEN*/
     implementation 'de.hdodenhof:circleimageview:3.0.1'   /*IMAGEN CIRCULAR*/
     implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
 }
