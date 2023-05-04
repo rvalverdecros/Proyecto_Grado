@@ -3,6 +3,7 @@ package com.example.proyectogrado;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ public class Login extends AppCompatActivity {
 
     FirebaseAuth auth; //La Autenticacion de Firebase
 
+    ProgressDialog progressDialog;
+
 
 
 
@@ -40,6 +43,8 @@ public class Login extends AppCompatActivity {
         passLogin = findViewById(R.id.passLogin);
         botonLogin = findViewById(R.id.botonLogin);
         auth = FirebaseAuth.getInstance();
+
+
 
         //UBICACION
         String ubicacion ="fuentes/zombie.TTF";
@@ -65,15 +70,21 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        progressDialog = new ProgressDialog(Login.this);
+        progressDialog.setMessage("Ingresando, Espere Por Favor");
+        progressDialog.setCancelable(false);
     }
 
     //Metodo para iniciar sesion del jugador
     private void LoginJugador(String email, String pass) {
+        progressDialog.show();
         auth.signInWithEmailAndPassword(email,pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            progressDialog.dismiss();
                             FirebaseUser user = auth.getCurrentUser();
                             startActivity(new Intent(Login.this, Menu.class));
                             assert user != null; //El usuario no es nulo
@@ -85,6 +96,7 @@ public class Login extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
                         Toast.makeText(Login.this,""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

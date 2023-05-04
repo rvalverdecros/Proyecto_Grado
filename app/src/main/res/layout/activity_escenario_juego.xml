@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg"
+    android:background="@drawable/escena"
     tools:context=".EscenarioJuego">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -17,20 +17,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:weightSum="6"
+            android:background="#000000"
             android:orientation="horizontal">
 
-            <!--X Y Y -->
+
+            <!--X Y Y-->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_weight="1">
 
                 <!--X-->
                 <TextView
                     android:id="@+id/anchoTv"
                     android:text="@string/anchoTv"
                     android:textColor="#ffffff"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -39,16 +44,18 @@
                     android:id="@+id/altoTv"
                     android:text="@string/altoTv"
                     android:textColor="#ffffff"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:src="@drawable/aplastados"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="15dp"/>
+                android:src="@drawable/muertes"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"/>
 
             <!--CONTADOR-->
             <TextView
@@ -56,40 +63,45 @@
                 android:text="@string/tvContador"
                 android:textColor="#ffffff"
                 android:textSize="20sp"
-                android:layout_marginStart="10dp"
-                android:layout_width="50dp"
+                android:layout_marginStart="3dp"
                 android:gravity="center"
-                android:layout_height="wrap_content"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
             <!--NOMBRE DEL JUGADOR-->
             <TextView
                 android:id="@+id/tvNombre"
                 android:text="@string/tvNombre"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                android:layout_marginStart="3dp"
+                android:gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
             <!--ANIMACIÓN-->
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
                 app:lottie_imageAssetsFolder="assets"
                 app:lottie_fileName="tiempo.json"
                 app:lottie_loop="true"
-                app:lottie_autoPlay="true"/>
+                app:lottie_autoPlay="true"
+                android:layout_weight="1"/>
 
             <!--TIEMPO-->
             <TextView
                 android:id="@+id/tvTiempo"
                 android:text="@string/tvTiempo"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="3dp"
+                android:textSize="15sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

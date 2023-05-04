@@ -73,7 +73,7 @@
                 android:hint="@string/edadEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="number"
                 android:importantForAutofill="no"/>
         </com.google.android.material.textfield.TextInputLayout>
 

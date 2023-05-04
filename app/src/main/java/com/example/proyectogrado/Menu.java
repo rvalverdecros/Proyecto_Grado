@@ -9,7 +9,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.Context;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +40,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -52,6 +53,8 @@ public class Menu extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference jugadores;
+
+    Dialog dialog;
 
     TextView mipuntuaciontxt;
     TextView zombies,uid,correo,nombre,edad,pais,menutxt;
@@ -85,6 +88,8 @@ public class Menu extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://zombie-buster-dc5f7-default-rtdb.europe-west1.firebasedatabase.app");
         jugadores = firebaseDatabase.getReference("MI BASE DE DATOS JUGADORES");
+
+        dialog = new Dialog(Menu.this);
 
         referenciaDeAlmacenamiento = FirebaseStorage.getInstance().getReference();
         permisosDeAlmacenamiento = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -161,6 +166,7 @@ public class Menu extends AppCompatActivity {
         cambiarPassbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(Menu.this, CambioDePass.class));
                 Toast.makeText(Menu.this, "CAMBIAR CONTRASEÑA", Toast.LENGTH_SHORT).show();
             }
         });
@@ -168,6 +174,8 @@ public class Menu extends AppCompatActivity {
         puntuacionesbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(Menu.this, Puntajes.class);
+                startActivity(intent);
                 Toast.makeText(Menu.this, "PUNTUACIONES", Toast.LENGTH_SHORT).show();
             }
         });
@@ -175,7 +183,8 @@ public class Menu extends AppCompatActivity {
         acercadebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Menu.this, "ACERCA DE", Toast.LENGTH_SHORT).show();
+                AcercaDe();
+                //Toast.makeText(Menu.this, "ACERCA DE", Toast.LENGTH_SHORT).show();
             }
         });
         cerrarSesion.setOnClickListener(new View.OnClickListener() {
@@ -184,6 +193,36 @@ public class Menu extends AppCompatActivity {
                 CerrarSesion();
             }
         });
+    }
+
+    private void AcercaDe() {
+
+        //UBICACION
+        String ubicacion ="fuentes/zombie.TTF";
+        Typeface tf = Typeface.createFromAsset(Menu.this.getAssets(),ubicacion);
+
+
+        TextView DesarroladorPOTXT,DevTXT;
+        Button OK;
+
+        dialog.setContentView(R.layout.acerca_de);
+
+        DesarroladorPOTXT = dialog.findViewById(R.id.DesarroladorPOTXT);
+        DevTXT = dialog.findViewById(R.id.DevTXT);
+        OK = dialog.findViewById(R.id.OK);
+
+        OK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        DesarroladorPOTXT.setTypeface(tf);
+        DevTXT.setTypeface(tf);
+
+        dialog.show();
+
     }
 
     private void EditarDatos() {

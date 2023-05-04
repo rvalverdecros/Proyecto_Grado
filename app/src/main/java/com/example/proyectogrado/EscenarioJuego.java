@@ -3,8 +3,10 @@ package com.example.proyectogrado;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -54,6 +56,7 @@ public class EscenarioJuego extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escenario_juego);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         ivZombie = findViewById(R.id.ivZombie);
 
@@ -214,10 +217,14 @@ public class EscenarioJuego extends AppCompatActivity {
         puntuacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(EscenarioJuego.this, Puntajes.class);
+                startActivity(intent);
                 Toast.makeText(EscenarioJuego.this, "VER PUNTUACIONES", Toast.LENGTH_SHORT).show();
             }
         });
         miDialog.show();
+
+        miDialog.setCancelable(false);
     }
 
     private void GuardarResultados(String key, int zombies){
@@ -231,5 +238,10 @@ public class EscenarioJuego extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
     }
 }

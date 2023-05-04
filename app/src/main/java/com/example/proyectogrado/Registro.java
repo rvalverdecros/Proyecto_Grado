@@ -3,6 +3,7 @@ package com.example.proyectogrado;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class Registro extends AppCompatActivity {
     TextView fechatxt;
     Button registrar;
     FirebaseAuth auth; //La Autenticacion de Firebase
+
+    ProgressDialog progressDialog;
 
 
 
@@ -85,15 +88,21 @@ public class Registro extends AppCompatActivity {
                 }
             }
         });
+
+        progressDialog = new ProgressDialog(Registro.this);
+        progressDialog.setMessage("Registrando, Espere Por Favor");
+        progressDialog.setCancelable(false);
     }
 
     //Metodo para regsitrar un jugador
     private void RegistrarJugador(String email, String password) {
+        progressDialog.show();
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 //Si el jugador fue registrado corrcetamente
                 if(task.isSuccessful()){
+                    progressDialog.dismiss();
                     FirebaseUser user = auth.getCurrentUser();
 
                     int contador = 0;
@@ -126,6 +135,7 @@ public class Registro extends AppCompatActivity {
                     Toast.makeText(Registro.this, "USUARIO REGISTRADO!", Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
+                    progressDialog.dismiss();
                     Toast.makeText(Registro.this, "Ha Ocurrido un Error!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -134,6 +144,7 @@ public class Registro extends AppCompatActivity {
          .addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                progressDialog.dismiss();
                 Toast.makeText(Registro.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

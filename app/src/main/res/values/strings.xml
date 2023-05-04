@@ -56,4 +56,29 @@
     <string name="irMenu">MENU</string>
     <string name="puntuacion">VER PUNTUACION</string>
 
+    <!--Datos Del Jugador En La Vista-->
+    <string name="NombreJugador">Nombre</string>
+    <string name="CorreoJugador">Correo</string>
+    <string name="PuntajeJugador">Puntuacion</string>
+    <string name="EdadJugador">Edad</string>
+    <string name="PaisJugador">Pais</string>
+
+    <!--DETALLE DEL JUGADOR-->
+    <string name="INFORMACIONDETALLE">INFORMACION DEL JUGADOR</string>
+    <string name="NombreDetalle">Nombre</string>
+    <string name="CorreoDetalle">Correo</string>
+    <string name="PuntajeDetalle">Puntuacion</string>
+    <string name="EdadDetalle">Edad</string>
+    <string name="PaisDetalle">Pais</string>
+
+    <!--EDICION DE CONTRASEÑA-->
+    <string name="ActualPass">Actual Contraseña</string>
+    <string name="NuevoPass">Nueva Contraseña</string>
+    <string name="CambiarPass">Cambiar Contraseña</string>
+
+    <!--Acerca DE-->
+    <string name="DesarroladorPOTXT">Desarrollado Por:</string>
+    <string name="DevTXT">Rafael Valverde Cros</string>
+    <string name="OK">OK</string>
+
 </resources>
