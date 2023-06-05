@@ -24,6 +24,7 @@ import java.util.HashMap;
 
 public class CambioDePass extends AppCompatActivity {
 
+    //Llamamos a las variables
     EditText ActualPass, NuevoPass;
     Button CambiarPass;
     DatabaseReference BASEDEDATOS;
@@ -40,6 +41,8 @@ public class CambioDePass extends AppCompatActivity {
         NuevoPass = findViewById(R.id.NuevoPass);
         CambiarPass = findViewById(R.id.CambiarPass);
 
+        //Conectamos con la base de datos
+
         BASEDEDATOS = FirebaseDatabase.getInstance("https://zombie-buster-dc5f7-default-rtdb.europe-west1.firebasedatabase.app").getReference("MI BASE DE DATOS JUGADORES");
         firebaseAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -50,6 +53,7 @@ public class CambioDePass extends AppCompatActivity {
                 String ACTUAL = ActualPass.getText().toString().trim();
                 String NUEVA = NuevoPass.getText().toString().trim();
 
+                //En caso de no rellenar bien los datos
                 if(TextUtils.isEmpty(ACTUAL)){
                     Toast.makeText(CambioDePass.this, "Llenar campo actual contraseña", Toast.LENGTH_SHORT).show();
                 }
@@ -65,6 +69,7 @@ public class CambioDePass extends AppCompatActivity {
         });
     }
 
+    //Funcion que sirve para cambiar la contraseña del jugador
     private void CambioDePassJugador(String actual, String nueva) {
 
         AuthCredential authCredential = EmailAuthProvider.getCredential((user.getEmail()),actual);

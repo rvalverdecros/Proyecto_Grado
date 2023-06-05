@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Random;
 
+//Funcion para la pantalla del juego
 public class EscenarioJuego extends AppCompatActivity {
 
     String nombreS, uidS, zombieS;

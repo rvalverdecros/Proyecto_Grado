@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso;
 
 public class DetalleJugador extends AppCompatActivity {
 
+    //Coge los datos del usuario
     ImageView ImagenDetalle;
     TextView INFORMACIONDETALLE, NombreDetalle, CorreoDetalle, PuntajeDetalle,EdadDetalle,PaisDetalle;
     @Override

@@ -32,6 +32,7 @@ import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity {
 
+
     EditText correoEt,passEt,nombreEt, edadEt, paisEt;
     TextView fechatxt;
     Button registrar;
